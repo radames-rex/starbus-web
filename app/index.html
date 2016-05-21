@@ -1,19 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
   <head>
     <meta charset="utf-8">
-    <meta name="Keywords" content="">
+    <meta name="Keywords" content="bus, onibus">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>starbus | v0.1.0</title>
+    <title>StarBus | v0.1.0</title>
     <link rel="icon" href="images/favicon.png">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="libraries/font-awesome/css/font-awesome.min.css">
+
+    <!-- bower:css -->
+    <link rel="stylesheet" href="libraries/angular-material/angular-material.css" />
+    <link rel="stylesheet" href="libraries/angular-loading-bar/build/loading-bar.css" />
+    <link rel="stylesheet" href="libraries/nvd3/build/nv.d3.css" />
+    <!-- endbower -->
   </head>
-  <body>
-    <h1>Olá, rad-armageddon!</h1>
-    <script src="libraries/angular/angular.min.js"></script> 
-    <script src="libraries/d3/d3.min.js"></script> 
+  <body ng-app="starBusWeb">
+    <section>
+      <div>StarBUS</div>
+      <aside class="">
+        <nav>
+          <ul>
+            <li>Pessoas</li>
+            <li>Ônibus</li>
+            <li>Paradas</li>
+            <li>Linhas</li>
+          </ul>
+        </nav>
+      </aside>
+      <div id="ui-view" ui-view></div>
+    </section>
+
+    <!-- bower:js -->
+    <script src="libraries/jquery/dist/jquery.js"></script>
+    <script src="libraries/angular/angular.js"></script>
+    <script src="libraries/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="libraries/angular-animate/angular-animate.js"></script>
+    <script src="libraries/angular-aria/angular-aria.js"></script>
+    <script src="libraries/angular-cookies/angular-cookies.js"></script>
+    <script src="libraries/angular-messages/angular-messages.js"></script>
+    <script src="libraries/angular-resource/angular-resource.js"></script>
+    <script src="libraries/angular-route/angular-route.js"></script>
+    <script src="libraries/angular-sanitize/angular-sanitize.js"></script>
+    <script src="libraries/angular-touch/angular-touch.js"></script>
+    <script src="libraries/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="libraries/angular-ui-router.stateHelper/statehelper.js"></script>
+    <script src="libraries/angular-http-auth/src/http-auth-interceptor.js"></script>
+    <script src="libraries/angular-translate/angular-translate.js"></script>
+    <script src="libraries/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+    <script src="libraries/angular-material/angular-material.js"></script>
+    <script src="libraries/angular-local-storage/dist/angular-local-storage.js"></script>
+    <script src="libraries/angular-loading-bar/build/loading-bar.js"></script>
+    <script src="libraries/d3/d3.js"></script>
+    <script src="libraries/angular-nvd3/dist/angular-nvd3.js"></script>
+    <script src="libraries/moment/moment.js"></script>
+    <script src="libraries/angular-moment/angular-moment.js"></script>
     <script scr="libraries/zepto/zepto.min.js"></script>
-    <script src="js/main.js" asyn defer></script>
+    <!-- endbower -->
+    <script src="libraries/nvd3/build/nv.d3.js"></script>
+
+    <!-- main -->
+    <script src="js/main.js"></script>
+    <script src="js/config.js"></script>
+
+    <!-- Components:line -->
+    <script src="components/line/chartline.ctrl.js"></script>
+    <script src="components/line/chartline.factory.js"></script>
   </body>
 </html>
