@@ -1,0 +1,22 @@
+{
+  "name": "starbus",
+  "authors": [
+    "rad-armageddon <radames.armageddon@gmail.com>"
+  ],
+  "description": "layer frontend starbus",
+  "main": "index.html",
+  "moduleType": [],
+  "keywords": [
+    "starbus"
+  ],
+  "license": "MIT",
+  "homepage": "index.html",
+  "repository": "https://github.com/rad-armageddon/starbus-web.git",
+  "private": true,
+  "dependencies": {
+    "angular":"latest",
+    "d3":"latest",
+    "font-awesome":"latest",
+    "zepto":"latest"
+  }
+}
