@@ -5,7 +5,7 @@
     <meta name="Keywords" content="bus, onibus">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>StarBus | v0.1.0</title>
-    <link rel="icon" href="images/favicon.png">
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="libraries/font-awesome/css/font-awesome.min.css">
 
@@ -16,19 +16,92 @@
     <!-- endbower -->
   </head>
   <body ng-app="starBusWeb">
-    <section>
-      <div>StarBUS</div>
-      <aside class="">
-        <nav>
-          <ul>
-            <li>Pessoas</li>
-            <li>Ônibus</li>
-            <li>Paradas</li>
-            <li>Linhas</li>
-          </ul>
-        </nav>
-      </aside>
-      <div id="ui-view" ui-view></div>
+    <section class="starbus">
+
+      <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+        <md-toolbar class="md-theme-indigo">
+          <div class="aside__header">
+            <div class="aside__header--icon"></div>
+            <div class="aside__header--title">StarBus &copy;</div>
+          </div>
+        </md-toolbar>
+        <md-content class="sidenav__content">
+          <md-list>
+            <md-list-item class="">
+              <md-button flex="auto" class="md-primary md-raised" ng-click="showListBottomSheet()">
+                <div class="md-list-item-text" layout="column">
+                  <h3><i class="fa fa-bus"></i> Ônibus</h3>
+                </div>
+              </md-button>
+            </md-list-item>
+            <md-list-item class="">
+              <md-button flex="auto" class="md-primary md-raised" ng-click="showListBottomSheet()">
+                <div class="md-list-item-text" layout="column">
+                  <h3><i class="fa fa-users"></i> Pessoas</h3>
+                </div>
+              </md-button>
+            </md-list-item>
+            <md-list-item class="">
+              <md-button flex="auto" class="md-primary md-raised" ng-click="showListBottomSheet()">
+                <div class="md-list-item-text" layout="column">
+                  <h3><i class="fa fa-hand-paper-o "></i> Paradas</h3>
+                </div>
+              </md-button>
+            </md-list-item>
+            <md-list-item class="">
+              <md-button flex="auto" class="md-primary md-raised" ng-click="showListBottomSheet()">
+                <div class="md-list-item-text" layout="column">
+                  <h3><i class="fa fa-road"></i> Linhas</h3>
+                </div>
+              </md-button>
+            </md-list-item>
+            <md-divider></md-divider>
+            <md-list-item class="">
+              <md-button flex="auto" class="md-primary md-raised" ng-click="showListBottomSheet()">
+                <div class="md-list-item-text" layout="column">
+                  <h3><i class="fa fa-cogs"></i> Configurações</h3>
+                </div>
+              </md-button>
+            </md-list-item>
+          </md-list>
+        </md-content>
+
+        <md-button class="md-fab md-primary sidenav__settings" aria-label="Settings">
+          <md-icon md-svg-src="images/bars.svg"></md-icon>
+        </md-button>
+      </md-sidenav><!-- Menu Lateral -->
+
+      <md-content flex layout="column" ng-controller="chartLineCtrl" class="starbus__content">
+        <md-list>
+          <md-list-item>
+            <md-card class="starbus__content--chart">
+              <md-card-content layout="row" layout-align="space-between">
+                <div class="md-media-xl card-media chart">
+                  <nvd3 options="options" data="data"></nvd3>
+                </div>
+                <md-card-actions layout="column">
+                  <md-button class="md-icon-button" aria-label="Favorite">
+                    <md-icon md-svg-icon="images/line.svg"></md-icon>
+                  </md-button>
+                  <md-button class="md-icon-button" aria-label="Settings">
+                    <md-icon md-svg-icon="images/bar.svg"></md-icon>
+                  </md-button>
+                  <md-button class="md-icon-button" aria-label="Share">
+                    <md-icon md-svg-icon="images/pie.svg"></md-icon>
+                  </md-button>
+                  <md-button class="md-icon-button" aria-label="Settings">
+                    <md-icon md-svg-icon="images/bubble.svg"></md-icon>
+                  </md-button>
+                  <md-button class="md-icon-button" aria-label="Share">
+                    <md-icon md-svg-icon="images/sun.svg"></md-icon>
+                  </md-button>
+                </md-card-actions>
+              </md-card-content>
+            </md-card>
+          </md-list-item>
+        </md-list>
+      </md-content><!-- Área do gráfico -->
+
     </section>
 
     <!-- bower:js -->
